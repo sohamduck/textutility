@@ -30,6 +30,7 @@ export default function Textform(props) {
         event.preventDefault();
         let newText='';
         setText(newText);
+        setEmail('');
     }
 
     const handleOnChange= (event)=>{
@@ -43,7 +44,7 @@ export default function Textform(props) {
             <h1>{props.heading}</h1>
             <form>
                 <div className="form-group">
-                    <textarea className="form-control" value={text} onChange={handleOnChange} id="mytext" rows="15"></textarea>
+                    <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode==='light'?'white':'rgb(7 3 44)',color:props.mode==='light'?'rgb(7 3 44)':'white'}} id="mytext" rows="15"></textarea>
                 </div>
                 <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to UpperCase</button>
                 <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to LowerCase</button>
@@ -55,7 +56,7 @@ export default function Textform(props) {
             <h1>Text Summary:</h1>
             {text.split(" ").length} words and {text.length} characters
             <h2>Preview</h2>
-            The email is {email}
+            {email.length===0?text.length>0?text:"Default Preview, Enter text to Preview":email}
         </div>
         </>
     )
