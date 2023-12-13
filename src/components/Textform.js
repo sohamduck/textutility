@@ -1,6 +1,11 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 
-export default function Textform(props) {
+const Textform=(props)=> {
+
+    useEffect(() => {
+        document.title = 'TextUtils - Home';
+      }, []);
+
     const [text,setText]=useState('');
     const [email,setEmail]=useState('');
 
@@ -117,4 +122,5 @@ export default function Textform(props) {
         </div>
         </>
     )
-}
+};
+export default Textform;

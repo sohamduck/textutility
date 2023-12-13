@@ -1,39 +1,21 @@
-import React,{useState} from 'react'
+import React,{useEffect} from 'react'
 
-export default function About() {
-    
-    const [myStyle, setMyStyle] = useState({
-        color:'black',
-        backgroundColor:'white',
-        border: '2px solid white'
-    })
-    const [BtnState, setBtnState] = useState("Enable Dark Mode")
+const About = () => {
+    // Update the title when the component mounts
+    useEffect(() => {
+      document.title = 'TextUtils - About';
+    }, []);
 
-    let toggleStyle=()=>{
-        if(myStyle.color==='white'){
-            setMyStyle({
-                color:'black',
-                backgroundColor:'white'
-            })
-            setBtnState("Enable Dark Mode")
-        }
-        else{
-            setMyStyle({
-                color:'white',
-                backgroundColor:'black'
-            })
-            setBtnState("Enable Light Mode")
-        }
-    }
+
     return (
 
-        <div className='container' style={myStyle}>
+        <div className='container'  >
             <h1>About Us</h1>
-            <div className="accordion my-3" id="accordionExample" style={myStyle}>
-                <div className="card" style={myStyle}>
+            <div className="accordion my-3" id="accordionExample"  >
+                <div className="card"  >
                     <div className="card-header" id="headingOne">
                         <h2 className="mb-0">
-                            <button className="btn btn-link" type="button" style={myStyle} data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button className="btn btn-link" type="button"   data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 Collapsible Group Item #1
                             </button>
                         </h2>
@@ -45,10 +27,10 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <div className="card" style={myStyle}>
+                <div className="card"  >
                     <div className="card-header" id="headingTwo">
                         <h2 className="mb-0">
-                            <button className="btn btn-link collapsed" style={myStyle} type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 Collapsible Group Item #2
                             </button>
                         </h2>
@@ -59,10 +41,10 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <div className="card" style={myStyle}>
+                <div className="card"  >
                     <div className="card-header" id="headingThree">
                         <h2 className="mb-0">
-                            <button className="btn btn-link collapsed" style={myStyle} type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <button className="btn btn-link collapsed"   type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 Collapsible Group Item #3
                             </button>
                         </h2>
@@ -74,9 +56,8 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <div>
-                <button onClick={toggleStyle} type="button" className="btn btn-primary">{BtnState}</button>
-            </div>
         </div>
     )
-}
+};
+
+export default About;
