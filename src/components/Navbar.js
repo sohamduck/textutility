@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 export default function Navbar(props) {
   
@@ -42,9 +42,12 @@ export default function Navbar(props) {
   return (
     //Navbar bootstrap
     <nav className="navbar navbar-expand-lg my-1" style={{...setStyles(props.mode)}}>
-      <Link className="navbar-brand" to="/">
+      {/* < a className="navbar-brand" to="/">
         {props.title}
-      </Link>
+      </> */}
+      <a className="navbar-brand" href="/">
+        {props.title}
+      </a>
       <button
         className="navbar-toggler"
         type="button"
@@ -60,15 +63,15 @@ export default function Navbar(props) {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <Link className="nav-link" to="/">
+            <a className="nav-link" href="/">
               Home <span className="sr-only">(current)</span>
-            </Link>
+            </a>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/about">
+          {/* <li className="nav-item">
+            <a className="nav-link" to="/about">
               {props.about}
-            </Link>
-          </li>
+            </a>
+          </li> */}
         </ul>
         <div className={`form-check form-switch text-${props.mode==='light'?'rgb(7 3 44)':'light'} mx-5`}>
           <input className="form-check-input" onClick={props.blueMode} type="checkbox" role="switch" id="blueSwitch"/>
