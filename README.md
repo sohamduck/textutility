@@ -1,3 +1,6 @@
+#Published On GitHub Pages
+https://sohamduck.github.io/textutility/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
