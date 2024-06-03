@@ -28,11 +28,11 @@ function App() {
   }, 2000);
   const redMode = () => {
     if (mode === 'light') {
-      // setMode('darkred');
-      // setBtn('warning');
-      // document.body.style.backgroundColor = '#6b0d16';
-      // document.body.style.color = 'red';
-      // showAlert("Red Mode Enabled", "success");
+      setMode('darkred');
+      setBtn('warning');
+      document.body.style.backgroundColor = '#6b0d16';
+      document.body.style.color = 'red';
+      showAlert("Red Mode Enabled", "success");
     }
     else {
       setMode('light');
